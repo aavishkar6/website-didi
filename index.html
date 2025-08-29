@@ -716,90 +716,6 @@ body {
     }
 }
     </style>
-    <script>
-        // Page navigation
-        function showPage(pageId) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
-            
-            // Update navigation active state
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => link.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = document.getElementById('submitBtn');
-            const formMessage = document.getElementById('formMessage');
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
-            
-            // Disable submit button
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-            
-            try {
-                // Replace with your actual API endpoint or email service
-                const response = await fetch('YOUR_API_ENDPOINT_HERE', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        to: 'dctbangkok@gmail.com',
-                        subject: `New Training Inquiry from ${data.name} - ${data.company}`,
-                        html: `
-                            <h2>New Training Inquiry</h2>
-                            <p><strong>Name:</strong> ${data.name}</p>
-                            <p><strong>Company:</strong> ${data.company}</p>
-                            <p><strong>Email:</strong> ${data.email}</p>
-                            <p><strong>Phone:</strong> ${data.phone}</p>
-                            <p><strong>Budget Range:</strong> ${data.budget || 'Not specified'}</p>
-                            <p><strong>Training Needs:</strong></p>
-                            <p>${data.trainingNeeds}</p>
-                        `
-                    })
-                });
-                
-                if (response.ok) {
-                    formMessage.textContent = 'Thank you! Your inquiry has been sent successfully. We\'ll get back to you within 24 hours to discuss your training needs.';
-                    formMessage.className = 'form-message success';
-                    formMessage.style.display = 'block';
-                    this.reset();
-                } else {
-                    throw new Error('Failed to send inquiry');
-                }
-            } catch (error) {
-                formMessage.textContent = 'Sorry, there was an error sending your inquiry. Please try contacting us directly via email or WhatsApp.';
-                formMessage.className = 'form-message error';
-                formMessage.style.display = 'block';
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Inquiry';
-            }
-        });
-
-        // Mobile menu handling (if needed)
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize with home page
-            showPage('home');
-        });
-    </script>
 </head>
 <body>
     <!-- Header -->
@@ -1136,4 +1052,76 @@ body {
 
     
 </body>
+<script>
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation active state
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            try {
+                // Replace with your actual API endpoint or email service
+                const response = await fetch('https://formspree.io/f/mvgbzdyy', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept':'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    formMessage.textContent = 'Thank you! Your inquiry has been sent successfully. We\'ll get back to you within 24 hours to discuss your training needs. If you do not get a message within 24 hours, please contact us at dctbangkok@gmail.com';
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+                    this.reset();
+                } else {
+                    throw new Error('Failed to send inquiry');
+                }
+            } catch (error) {
+                formMessage.textContent = 'Sorry, there was an error sending your inquiry. Please try contacting us directly via email at dctbangkok@gmail.com';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Inquiry';
+            }
+        });
+
+        // Mobile menu handling (if needed)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize with home page
+            showPage('home');
+        });
+    </script>
 </html>
