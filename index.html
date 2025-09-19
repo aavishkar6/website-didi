@@ -661,6 +661,83 @@ body {
     padding: 0 24px;
 }
 
+/* Blog Page Styles */
+.blog-post {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+.blog-post-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+}
+
+.blog-post-meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.blog-post-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 12px;
+}
+
+.blog-post-content p {
+    margin-bottom: 16px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.blog-post-author {
+    margin-top: 30px;
+    font-style: italic;
+    color: #555;
+    text-align: right;
+}
+
+.blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.blog-card {
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    border-left: 4px solid rgb(20, 54, 57);
+    transition: all 0.3s;
+    text-align: left;
+}
+
+.blog-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.blog-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.blog-card-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .nav-menu {
@@ -729,6 +806,7 @@ body {
                     <li><a href="#" onclick="showPage('programs')" class="nav-link">Programs</a></li>
                     <li><a href="#" onclick="showPage('tours')" class="nav-link">Tours & Experience</a></li>
                     <li><a href="#" onclick="showPage('contact')" class="nav-link">Contact Us</a></li>
+                    <li><a href="#" onclick="showPage('blogs')" class="nav-link">Blogs</a></li>
                 </ul>
             </nav>
             <div class="nav-buttons">
@@ -1057,6 +1135,82 @@ body {
                     </div>
                 </div>
                 <img src="./assets/image office.png" alt="Our Office" class="contact-image">
+
+            </div>
+        </section>
+    </div>
+
+        <!-- Blogs Page -->
+    <div id="blogs" class="page">
+        <section class="content-section">
+            <div class="content-container">
+                <h1 class="section-title">Our Blogs</h1>
+
+                <!-- Main Blog Post -->
+                <div class="blog-post">
+                    <h2 class="blog-post-title">Why Thailand is Becoming a Hub for Corporate Training in Asia</h2>
+                    <p class="blog-post-meta">By Dee Corporate Consulting and Training Bangkok</p>
+                    <div class="blog-post-content">
+                        <p>In recent years, Thailand has emerged as more than just a tourist destination. Beyond its rich culture, thriving economy, and global connectivity, the country is fast becoming a hub for corporate training in Asia. For multinational companies, regional banks, and growing organizations across the continent, Bangkok, Thailand now serves as a strategic center for leadership development, finance training, insurance training, and digital transformation programs.</p>
+                        
+                        <h3>Strategic Location in Asia</h3>
+                        <p>Thailand&#39;s geographic position makes it a natural meeting point for Asian business. With Bangkok only a few hours&#39; flight from key business capitals like Singapore, Hong Kong, Shanghai, and New Delhi, companies can bring together diverse teams from across the region in one convenient location. This accessibility has transformed Thailand into a regional hub for corporate training in Asia, attracting organizations that want to balance convenience with efficiency.</p>
+                        
+                        <h3>World-Class Facilities and Infrastructure</h3>
+                        <p>Bangkok offers state-of-the-art training venues, modern co-working spaces, and fully equipped conference centers that rival those in more expensive cities. Coupled with high-quality hospitality and accommodation options, Thailand provides the right environment for immersive training programs. For corporate clients, this balance of cost-effectiveness and quality makes corporate training in Thailand a highly attractive choice.</p>
+                        
+                        <h3>Focus on Digital Transformation, Finance & Insurance</h3>
+                        <p>The demand for corporate training in Bangkok is growing rapidly in industries such as finance, banking, insurance, and digital transformation. As organizations across Asia face disruption from fintech, AI, and automation, Thai training providers have responded with cutting-edge programs that combine global best practices with local and regional business realities. This positions Thailand as a knowledge leader in corporate training programs across Asia.</p>
+
+                        <h3>Government Support and Training Ecosystem</h3>
+                        <p>The Thai government&#39;s continued investment in education and workforce development has strengthened the country&#39;s corporate learning ecosystem. These initiatives ensure that programs remain aligned with international standards while addressing regional business challenges. The result is a dynamic environment where businesses can build future-ready leaders and teams.</p>
+
+                        <h3>Cost Advantage Without Compromising Quality</h3>
+                        <p>Compared to training hubs like Singapore or Hong Kong, Thailand provides world-class corporate training programs at a fraction of the cost. This cost advantage, combined with excellent service delivery, allows companies to train larger groups of employees without sacrificing program depth or quality.</p>
+
+                        <h3>Cultural Appeal and Team-Building Opportunities</h3>
+                        <p>Thailand&#39;s cultural richness adds another dimension to its appeal. Many organizations combine corporate training in Bangkok with team-building activities, exposure visits, and cultural immersion programs. From exploring Bangkok&#39;s business districts to enjoying Thailand&#39;s unique hospitality, training here becomes more than a professional investment — it becomes an experience that strengthens teamwork and cultural understanding.</p>
+
+                        <h3>Conclusion</h3>
+                        <p>As Asia continues to rise as an economic powerhouse, Thailand has secured its place as a premier destination for corporate training in Asia. With its strategic location, world-class facilities, industry-focused programs in finance, insurance, and digital transformation, cost advantage, and cultural vibrancy, Thailand offers organizations the perfect blend of professional development and growth.</p>
+                        <p>For businesses looking to future-proof their teams through corporate training in Bangkok, Thailand, the choice is clear: Thailand is not just an option — it is the hub of choice.</p>
+                    </div>
+                    <div class="blog-post-author">
+                        <p><strong>By Binam Sophiya Acharya</strong><br>Managing Director<br>Dee Corporate Consulting and Training Bangkok</p>
+                    </div>
+                </div>
+
+                <h2 class="section-title" style="margin-top: 80px;">More Insights</h2>
+
+                <!-- Blog Snippets Grid -->
+                <div class="blogs-grid">
+                    <div class="blog-card">
+                        <h3 class="blog-card-title">Digital Transformation Training in Bangkok</h3>
+                        <div class="blog-card-content">
+                            <p><strong>Why Digital Transformation Training in Bangkok is in High Demand</strong></p>
+                            <p>As the digital economy grows, businesses across Asia are turning to Bangkok, Thailand for specialized digital transformation training programs. Organizations in banking, insurance, and finance sectors face rapid change driven by AI, fintech, and automation.</p>
+                            <p>With world-class facilities, affordable costs, and an international business environment, Bangkok is quickly becoming Asia&#39;s hub for digital transformation training.</p>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <h3 class="blog-card-title">Finance & Insurance Corporate Training in Thailand</h3>
+                        <div class="blog-card-content">
+                            <p><strong>Finance and Insurance Training Programs in Bangkok, Thailand</strong></p>
+                            <p>Thailand has become a strategic location for finance and insurance corporate training in Asia. Banks, insurance companies, and multinational firms are choosing Bangkok for leadership development and professional skills training that strengthen their workforce.</p>
+                            <p>By offering cost-effective, high-quality training programs, Thailand helps organizations upskill their teams while building confidence to tackle global challenges.</p>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <h3 class="blog-card-title">Why Companies Choose Corporate Training in Bangkok</h3>
+                        <div class="blog-card-content">
+                            <p><strong>Corporate Training in Bangkok: The New Hub for Asia</strong></p>
+                            <p>More organizations are selecting Bangkok, Thailand as their preferred destination for corporate training programs. The city&#39;s accessibility, world-class training venues, and thriving business ecosystem make it ideal for leadership and skills development.</p>
+                            <p>With its unique mix of affordability, quality, and business focus, corporate training in Bangkok is setting the standard in Asia.</p>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </section>
