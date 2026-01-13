@@ -55,6 +55,20 @@ body {
   vertical-align: middle;
 }
 
+/* Hamburger Icon Styles */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: 0.3s;
+}
 
 .nav-menu {
     display: flex;
@@ -741,8 +755,31 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Show hamburger on mobile */
+    }
+
     .nav-menu {
-        display: none;
+        display: none; /* Hide standard horizontal menu */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    /* This class will be added via JavaScript */
+    .nav-menu.mobile-active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+        text-align: center;
     }
 
     .hero-container {
@@ -801,7 +838,13 @@ body {
         <div class="nav-container">
             <div class="logo">Dee Corporate Consulting and Training Bangkok</div>
             <nav>
-                <ul class="nav-menu">
+                <!-- Add this button -->
+                <div class="menu-toggle" id="mobile-menu" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu" id="nav-list">
                     <li><a href="#" onclick="showPage('home')" class="nav-link active">Home</a></li>
                     <li><a href="#" onclick="showPage('about')" class="nav-link">About Us</a></li>
                     <li><a href="#" onclick="showPage('programs')" class="nav-link">Programs</a></li>
@@ -1396,7 +1439,14 @@ body {
     
 </body>
 <script>
-        // Page navigation
+
+        // Toggle menu bar
+        function toggleMobileMenu() {
+            const navList = document.getElementById('nav-list');
+            navList.classList.toggle('mobile-active');
+        }
+
+        // Modify your existing showPage function to close the menu after clicking a link
         function showPage(pageId) {
             // Hide all pages
             const pages = document.querySelectorAll('.page');
@@ -1408,9 +1458,18 @@ body {
             // Update navigation active state
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => link.classList.remove('active'));
-            event.target.classList.add('active');
             
-            // Scroll to top
+            // Check if the clicked element is an event before trying to access target
+            if (window.event) {
+                window.event.target.classList.add('active');
+            }
+
+            // --- ADD THIS PART ---
+            // Close mobile menu after clicking a link
+            const navList = document.getElementById('nav-list');
+            navList.classList.remove('mobile-active');
+            // ---------------------
+
             window.scrollTo(0, 0);
         }
 
