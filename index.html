@@ -229,6 +229,92 @@ body {
     object-position: center;
 }
 
+/* Partners Section Styles */
+.partners {
+    padding: 80px 0;
+    background: white; /* Contrast against the light-gray highlights section */
+}
+
+.partners-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.partners-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 60px;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.partner-card {
+    text-decoration: none; /* Removes underline from link */
+    background: #f8f9fa;
+    padding: 40px 32px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    display: block;
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-color: #0066cc;
+}
+
+.partner-logo-box {
+    height: 80px; /* Uniform height for all logo containers */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.partner-logo-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(20%); /* Optional: softens logos to match design */
+    transition: filter 0.3s;
+}
+
+.partner-card:hover img {
+    filter: grayscale(0%);
+}
+
+.partner-role {
+    font-size: 14px;
+    color: #0066cc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.partner-name {
+    font-size: 18px;
+    color: #1a1a1a;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Ensure mobile responsiveness */
+@media (max-width: 768px) {
+    .partners-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Highlights Section */
 .highlights {
     padding: 80px 0;
@@ -910,6 +996,41 @@ body {
                         <h3 class="highlight-title">Expert Trainers. Real World Experience</h3>
                         <p class="highlight-description">Learn from seasoned professionals with real-world experience—supported by modern infrastructure that inspires performance.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="partners">
+            <div class="partners-container">
+                <h2 class="partners-title">Partners</h2>
+                <div class="partners-grid">
+                    <!-- Legal Partner -->
+                    <a href="https://samriddhilaw.com/" target="_blank" class="partner-card">
+                        <div class="partner-logo-box">
+                            <img src="./assets/samriddhi-logo.png" alt="Samriddhi Law P. Ltd.">
+                        </div>
+                        <h3 class="partner-role">Legal Partner (Nepal)</h3>
+                        <p class="partner-name">Samriddhi Law P. Ltd.</p>
+                    </a>
+
+                    <!-- Travel Partner -->
+                    <a href="https://www.sealinksholiday.com/" target="_blank" class="partner-card">
+                        <div class="partner-logo-box">
+                            <img src="./assets/sealinks-logo.png" alt="Sealinks Holidays">
+                        </div>
+                        <h3 class="partner-role">Travel Partner (Nepal)</h3>
+                        <p class="partner-name">Sealinks Holidays</p>
+                    </a>
+
+                    <!-- Information Security Partner -->
+                    <a href="https://hacktechmena.com/" target="_blank" class="partner-card">
+                        <div class="partner-logo-box">
+                            <img src="./assets/hacktech-logo.png" alt="Hack Tech">
+                        </div>
+                        <h3 class="partner-role">Information Security Partner (Bahrain)</h3>
+                        <p class="partner-name">Hack Tech</p>
+                    </a>
                 </div>
             </div>
         </section>
